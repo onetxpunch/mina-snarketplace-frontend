@@ -1,0 +1,20 @@
+---
+import "@/styles/global.scss"
+import {SEO} from "astro-seo";
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title } = Astro.props;
+const description = Astro.props.description ?? "A heavily optimized description full of well-researched keywords."
+---
+
+<!doctype html>
+<html lang="en">
+	<SEO title={title}
+	description={description} titleTemplate="" />
+	<body class="m-8">
+		<slot />
+	</body>
+</html>
